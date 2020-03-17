@@ -1,69 +1,87 @@
 import React, { Component } from 'react';
 import './App.css';
 
-class App extends Component{
+class App extends Component {
 
   constructor(props){
     super(props);
     this.state = {
-      status : true,
-      data: [
-        "abc",
-        "xyz"
-      ]
-    }
+      status: true,
+      num : 0,
+      dataTest: ['12345','abc','xyz']
+    };
 
-    this.onChangeText = this.onChangeText.bind()
+    this.onChangeText = this.onChangeText.bind();
+    this.onChangeValue = this.onChangeValue.bind()
   }
 
-  onChangeText(event){
-    let value = event.target.value
+  onChangeValue = () => {
+    console.log(this.state.dataTest)
+  }
+
+  onChangeText = (event) => {
+    var x = event.target.value
     this.setState({
-      data : this.data.push(value)
+      num : this.state.dataTest.push(x)
     })
-    console.log(this.data)
+    this.state.dataTest.push(x)
   }
-
 
   render(){
+  
+  let arr = this.state.dataTest.map((arr1, index) => {
     return(
-
-      <div>
-        
-        <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-          
-        </div>
-      
-          <div className="box panel panel-info col-xs-6 col-sm-6 col-md-6 col-lg-6">
-              <div className="panel-heading">
-                <h3 className="panel-title">TO DO LIST</h3>
-              </div>
-              <div className="panel-body box-main">
-                
-                {/* INPUT */}
-
-                <input type="email" name=""className="form-control" value="" onChange = {this.onChangeText}>
-                </input>&nbsp;
-                
-                <div className="checkbox">
-                  <label>
-                    <input type="checkbox" value=""></input>
-                    Checkbox
-                  </label>
-
-                  {/* INPUT */}
-
-                </div>
-                
-              </div>
-          </div>
-
-          <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-          
-          </div>
-      
-      </div>
+      <div className="checkbox" key={index}>
+        <label>
+          <input type="checkbox" value=""></input>
+          <p>{arr1}</p>
+        </label>
+    </div>
     )
+  })
+  return (
+    <div>
+
+      
+      <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+        
+      </div>
+      
+    <div className="panel panel-default col-xs-8 col-sm-8 col-md-8 col-lg-8">
+        <div className="panel-body todo">
+          TO DO
+        </div>
+        <div className="panel-footer">
+          
+          <div className="input-group">
+            <input type="text" className="form-control" 
+                                id="exampleInputAmount" 
+                                placeholder="Search"
+                                onChange = {this.onChangeText}
+                                >
+            </input> 
+            <span className="input-group-btn">
+              <button type="button" 
+                      className="btn btn-default"
+                      onClick= {this.onChangeValue}>
+                        Go!
+                      </button>
+            </span>
+          </div>
+
+          {arr}
+
+        </div>
+    </div>
+
+          
+    <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+        
+        </div>
+
+    </div>
+    
+  );
   }
 }
 
