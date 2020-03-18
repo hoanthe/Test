@@ -8,33 +8,57 @@ class App extends Component {
     this.state = {
       status: true,
       num : 0,
-      dataTest: ['12345','abc','xyz']
+      dataTest: ['12345','abc','xyz'],
+      divStyle : {color: 'blue'}
     };
-
     this.onChangeText = this.onChangeText.bind();
     this.onChangeValue = this.onChangeValue.bind()
   }
 
-  onChangeValue = () => {
-    console.log(this.state.dataTest)
+  onChangeValue = (event) => {
+
+    const divStyleFirst = {
+      color: 'blue',
+      textDecoration: 'line-through'
+    };
+
+    const divStyleSec = {
+      color: 'black',
+      fontStyle: 'normal'
+    };
+
+
+    if (event.target.checked) {
+      this.setState({
+        divStyle : divStyleFirst
+      })
+    }else{
+      this.setState({
+        divStyle : divStyleSec
+      })
+    }
   }
 
   onChangeText = (event) => {
     var x = event.target.value
-    this.setState({
+    if (event.key !== 'Enter') {
+      x += x
+    }else
+    {this.setState({
       num : this.state.dataTest.push(x)
     })
-    this.state.dataTest.push(x)
+    event.target.value = ""
+  }
   }
 
   render(){
   
   let arr = this.state.dataTest.map((arr1, index) => {
     return(
-      <div className="checkbox" key={index}>
-        <label>
-          <input type="checkbox" value=""></input>
-          <p>{arr1}</p>
+      <div className="checkbox" key={index} >
+        <label >
+          <input type="checkbox" value="" ></input>
+          <p style = {this.state.divStyle} onClick = {this.onChangeValue} >{arr1}</p>
         </label>
     </div>
     )
@@ -57,7 +81,7 @@ class App extends Component {
             <input type="text" className="form-control" 
                                 id="exampleInputAmount" 
                                 placeholder="Search"
-                                onChange = {this.onChangeText}
+                                onKeyPress = {this.onChangeText}
                                 >
             </input> 
             <span className="input-group-btn">
