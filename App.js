@@ -1,111 +1,181 @@
 import React, { Component } from 'react';
 import './App.css';
 
-class App extends Component {
-
+class App extends Component{
   constructor(props){
     super(props);
     this.state = {
-      status: true,
-      num : 0,
-      dataTest: ['12345','abc','xyz'],
-      divStyle : {color: 'blue'}
-    };
-    this.onChangeText = this.onChangeText.bind();
-    this.onChangeValue = this.onChangeValue.bind()
-  }
-
-  onChangeValue = (event) => {
-
-    const divStyleFirst = {
-      color: 'blue',
-      textDecoration: 'line-through'
-    };
-
-    const divStyleSec = {
-      color: 'black',
-      fontStyle: 'normal'
-    };
-
-
-    if (event.target.checked) {
-      this.setState({
-        divStyle : divStyleFirst
-      })
-    }else{
-      this.setState({
-        divStyle : divStyleSec
-      })
+      name: "",
+      first_Sec: 'first',
+      number: 0,
+      break_1: "",
+      ojWork: {
+        bg: "14:00"
+      }
     }
   }
 
-  onChangeText = (event) => {
-    var x = event.target.value
-    if (event.key !== 'Enter') {
-      x += x
-    }else
-    {this.setState({
-      num : this.state.dataTest.push(x)
-    })
-    event.target.value = ""
+  onChangeWork (event){
+      let target = event.target
+      let name = target.name
+      let value = target.value
+      this.setState({
+        [name] : value
+      })
   }
+
+  onInput(event){
+    let target = event.target
+    let value = target.value
+    this.setState({
+      number : value
+    })
+  }
+
+  onInputName(event){
+    let target = event.target
+    let value = target.value
+    this.setState({
+      name : value
+    })
+  }
+
+  onShow = () => {
+
   }
 
   render(){
-  
-  let arr = this.state.dataTest.map((arr1, index) => {
-    return(
-      <div className="checkbox" key={index} >
-        <label >
-          <input type="checkbox" value="" ></input>
-          <p style = {this.state.divStyle} onClick = {this.onChangeValue} >{arr1}</p>
-        </label>
-    </div>
-    )
-  })
-  return (
-    <div>
 
-      
-      <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-        
-      </div>
-      
-    <div className="panel panel-default col-xs-8 col-sm-8 col-md-8 col-lg-8">
-        <div className="panel-body todo">
-          TO DO
-        </div>
-        <div className="panel-footer">
-          
-          <div className="input-group">
-            <input type="text" className="form-control" 
-                                id="exampleInputAmount" 
-                                placeholder="Search"
-                                onKeyPress = {this.onChangeText}
-                                >
-            </input> 
-            <span className="input-group-btn">
-              <button type="button" 
-                      className="btn btn-default"
-                      onClick= {this.onChangeValue}>
-                        Go!
-                      </button>
-            </span>
+    console.log(this.state.first_Sec)
+
+    return(            
+    <>     
+      {/* Mục tùy chọn */}
+      <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <div className="panel panel-info">
+          <div className="panel-heading">
+            <h3 className="panel-title">Mail Server</h3>
           </div>
+          <div className="panel-body">
 
-          {arr}
+          <div className="input-group box">
+              <div className="input-group-addon"><span>Tên</span></div>
+              <input type="text" 
+                    onChange = {(event) => this.onInputName(event)}
+                    className="form-control" 
+                    id="exampleInputAmountName" 
+                    placeholder="Name"/>
+            </div>
 
-        </div>
-    </div>
+            <div className="input-group box">
+              <div className="input-group-addon"><span>Số lượng lỗi</span></div>
+              <input type="text" 
+                    onChange = {(event) => this.onInput(event)}
+                    className="form-control" 
+                    id="exampleInputAmount" 
+                    placeholder="Number"/>
+            </div>
 
+            
+            <div className="radio">
+              <label>
+                <input type="radio" 
+                      name="first_Sec" 
+                      id="input" 
+                      value="first" 
+                      onChange = { (event) => this.onChangeWork(event)}
+                      // Minh họa ví dụ cho dễ hiểu checked đang ở đâu
+                      checked={this.state.first_Sec === 'first'}/> 
+                Mail Trước
+              </label><br/>
+              <label>
+              <input type="radio" 
+                      name="first_Sec" 
+                      id="input" 
+                      value="second" 
+                      onChange = { (event) => this.onChangeWork(event)}
+                      // Minh họa ví dụ cho dễ hiểu checked đang ở đâu
+                      checked={this.state.first_Sec === 'second'}/>
+                Mail Sau
+              </label>
+            </div>
+            
+            {/* <select  id="input" className="form-control" onChange = { (event) => this.onChangeWork(event)} >
+              <option name="first_Sec" value="first" >-- Mail Trước --</option>
+              <option name="first_Sec" value="second" >-- Mail Sau --</option>
+            </select> */}
+            
+            
+            
+            
+            <div className = "box">
+                <button onClick = {this.onShow()} 
+                        type="button" 
+                        className="btn btn-primary box-btn"
+                        id = "1"
+                >Ca 1</button>
+                <button onClick = {this.onShow()} 
+                        type="button" 
+                        className="btn btn-primary box-btn"
+                        id = "2"
+                >Ca 2</button>
+                <button onClick = {this.onShow()} 
+                        type="button" 
+                        className="btn btn-primary box-btn"
+                        id = "3"
+                >Ca 3</button>
+            </div>
+          </div>
+      </div>
+      </div>
+
+      {/* Nội dung hiển thị */}
+
+      <div className="col-xs-8 col-sm-8 col-md-8 col-lg-8">
           
-    <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-        
-        </div>
+          
+          <div className="panel panel-info">
+              <div className="panel-heading">
+                <h3 className="panel-title">Tiêu đề</h3>
+              </div>
+              <div className="panel-body">
+                <p>作業日報 {this.state.name} 2020/04/10</p>
+              </div>
+          </div>
+          
+          
+          <div className="panel panel-info">
+              <div className="panel-heading">
+                <h3 className="panel-title">Nội Dung Mail</h3>
+              </div>
+              <div className="panel-body">
+                  <p></p>
+                  <p>関連各位</p>
 
-    </div>
-    
-  );
+                  <p>・勤務日時　04月10日 14:00 - 22:30</p>
+
+                  <p>　作業内容</p>
+
+                  <p> 14:00 - 18:30　メールを監視・対応しながら、資料確認、。</p>
+
+                  <p> 18:30 - 19:00　休憩、食事。 　</p>
+
+                  <p>19:00 - 22:30　メールを監視・対応しながら、資料確認、。</p>
+
+                  <p>アラート対応 :  {this.state.number} Errors。</p>
+                  <p>特にございません。</p>
+
+                  <p>以上です</p>
+                  <p>よろしくお願いします。</p>
+                  <p>--------------------------------------------------------------- </p>                
+              </div>
+          </div>
+          
+      </div>
+
+    </>
+        
+    )
   }
 }
 
