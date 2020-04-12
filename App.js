@@ -9,9 +9,7 @@ class App extends Component{
       first_Sec: 'first',
       number: 0,
       break_1: "",
-      ojWork: {
-        bg: "14:00"
-      }
+      arr : ["06:00 - 11:00","11:00 - 11:30","11:30 - 14:30"]
     }
   }
 
@@ -40,7 +38,58 @@ class App extends Component{
     })
   }
 
-  onShow = () => {
+  onShow(event) {
+    let ar1 = ["06:00 - 11:00","11:00 - 11:30","11:30 - 14:30"]
+    let ar1_2 = ["06:00 - 11:30","11:30 - 12:00","12:00 - 14:30"]
+
+    let ar2 = ["14:00 - 18:00","18:00 - 18:30","18:30 - 22:30"]
+    let ar2_2 = ["14:00 - 18:30","18:30 - 19:00","19:00 - 22:30"]
+
+    let ar3 = ["22:00 - 02:00","02:00 - 02:30","02:30 - 06:30"]
+    let ar3_2 = ["22:00 - 02:30","02:30 - 03:00","03:00 - 06:30"]
+
+    let name = event.target.name
+    let first_Sec = this.state.first_Sec
+
+    console.log(name)
+    console.log(name)
+
+
+    if (first_Sec === "first") {
+      if (name === "1") {
+        this.setState({
+          arr: ar1
+        })
+      }
+      if (name === "2") {
+        this.setState({
+          arr: ar2
+        })
+      }
+      if (name === "3") {
+        this.setState({
+          arr: ar3
+        })
+      }
+    }
+    if (first_Sec === "second") {
+      if (name === "1") {
+        this.setState({
+          arr: ar1_2
+        })
+      }
+      if (name === "2") {
+        this.setState({
+          arr: ar2_2
+        })
+
+      }
+      if (name === "3") {
+        this.setState({
+          arr: ar3_2
+        })
+      }
+    }
 
   }
 
@@ -109,20 +158,20 @@ class App extends Component{
             
             
             <div className = "box">
-                <button onClick = {this.onShow()} 
+                <button onClick = {(event) => this.onShow(event)} 
                         type="button" 
                         className="btn btn-primary box-btn"
-                        id = "1"
+                        name = "1"
                 >Ca 1</button>
-                <button onClick = {this.onShow()} 
+                <button onClick = {(event) => this.onShow(event)} 
                         type="button" 
                         className="btn btn-primary box-btn"
-                        id = "2"
+                        name = "2"
                 >Ca 2</button>
-                <button onClick = {this.onShow()} 
+                <button onClick = {(event) => this.onShow(event)} 
                         type="button" 
                         className="btn btn-primary box-btn"
-                        id = "3"
+                        name = "3"
                 >Ca 3</button>
             </div>
           </div>
@@ -156,11 +205,11 @@ class App extends Component{
 
                   <p>　作業内容</p>
 
-                  <p> 14:00 - 18:30　メールを監視・対応しながら、資料確認、。</p>
+                  <p> {this.state.arr[0]}　メールを監視・対応しながら、資料確認、。</p>
 
-                  <p> 18:30 - 19:00　休憩、食事。 　</p>
+                  <p> {this.state.arr[1]}　休憩、食事。 　</p>
 
-                  <p>19:00 - 22:30　メールを監視・対応しながら、資料確認、。</p>
+                  <p> {this.state.arr[2]}　メールを監視・対応しながら、資料確認、。</p>
 
                   <p>アラート対応 :  {this.state.number} Errors。</p>
                   <p>特にございません。</p>
