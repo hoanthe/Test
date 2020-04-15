@@ -8,18 +8,78 @@ class App extends Component{
       name: "",
       first_Sec: 'first',
       number: 0,
-      break_1: "",
+      workStatus: "",
       arr : ["06:00 - 11:00","11:00 - 11:30","11:30 - 14:30"]
     }
   }
 
   onChangeWork (event){
+
+    let ar1 = ["06:00 - 11:00","11:00 - 11:30","11:30 - 14:30"]
+    let ar1_2 = ["06:00 - 11:30","11:30 - 12:00","12:00 - 14:30"]
+
+    let ar2 = ["14:00 - 18:00","18:00 - 18:30","18:30 - 22:30"]
+    let ar2_2 = ["14:00 - 18:30","18:30 - 19:00","19:00 - 22:30"]
+
+    let ar3 = ["22:00 - 02:00","02:00 - 02:30","02:30 - 06:30"]
+    let ar3_2 = ["22:00 - 02:30","02:30 - 03:00","03:00 - 06:30"]
+
       let target = event.target
       let name = target.name
       let value = target.value
+      let workStatus = this.state.workStatus
+      let first_Sec = this.state.first_Sec
       this.setState({
         [name] : value
       })
+
+
+      if (first_Sec === "first") {
+        first_Sec = "second"
+      }else{
+        first_Sec = "first"
+      }
+      if (first_Sec === "first") {
+        if (workStatus === "1") {
+          this.setState({
+            arr: ar1,
+            workStatus: "1"
+          })
+        }
+        if (workStatus === "2") {
+          this.setState({
+            arr: ar2,
+            workStatus: "2"
+          })
+        }
+        if (workStatus === "3") {
+          this.setState({
+            arr: ar3,
+            workStatus: "3"
+          })
+        }
+      }
+      if (first_Sec === "second") {
+        if (workStatus === "1") {
+          this.setState({
+            arr: ar1_2,
+            workStatus: "1"
+          })
+        }
+        if (workStatus === "2") {
+          this.setState({
+            arr: ar2_2,
+            workStatus: "2"
+          })
+  
+        }
+        if (workStatus === "3") {
+          this.setState({
+            arr: ar3_2,
+            workStatus: "3"
+          })
+        }
+      }
   }
 
   onInput(event){
@@ -51,42 +111,45 @@ class App extends Component{
     let name = event.target.name
     let first_Sec = this.state.first_Sec
 
-    console.log(name)
-    console.log(name)
-
 
     if (first_Sec === "first") {
       if (name === "1") {
         this.setState({
-          arr: ar1
+          arr: ar1,
+          workStatus: "1"
         })
       }
       if (name === "2") {
         this.setState({
-          arr: ar2
+          arr: ar2,
+          workStatus: "2"
         })
       }
       if (name === "3") {
         this.setState({
-          arr: ar3
+          arr: ar3,
+          workStatus: "3"
         })
       }
     }
     if (first_Sec === "second") {
       if (name === "1") {
         this.setState({
-          arr: ar1_2
+          arr: ar1_2,
+          workStatus: "1"
         })
       }
       if (name === "2") {
         this.setState({
-          arr: ar2_2
+          arr: ar2_2,
+          workStatus: "2"
         })
 
       }
       if (name === "3") {
         this.setState({
-          arr: ar3_2
+          arr: ar3_2,
+          workStatus: "3"
         })
       }
     }
@@ -94,8 +157,6 @@ class App extends Component{
   }
 
   render(){
-
-    console.log(this.state.first_Sec)
 
     return(            
     <>     
@@ -132,9 +193,10 @@ class App extends Component{
                       name="first_Sec" 
                       id="input" 
                       value="first" 
-                      onChange = { (event) => this.onChangeWork(event)}
+                      onClick = { (event) => this.onChangeWork(event)}
                       // Minh họa ví dụ cho dễ hiểu checked đang ở đâu
-                      checked={this.state.first_Sec === 'first'}/> 
+                      // checked={this.state.first_Sec === 'first'}
+                      /> 
                 Mail Trước
               </label><br/>
               <label>
@@ -142,9 +204,10 @@ class App extends Component{
                       name="first_Sec" 
                       id="input" 
                       value="second" 
-                      onChange = { (event) => this.onChangeWork(event)}
+                      onClick = { (event) => this.onChangeWork(event)}
                       // Minh họa ví dụ cho dễ hiểu checked đang ở đâu
-                      checked={this.state.first_Sec === 'second'}/>
+                      // checked={this.state.first_Sec === 'second'}
+                      />
                 Mail Sau
               </label>
             </div>
