@@ -19,7 +19,7 @@
   nav {
     float: left;
     width: 20%;
-    height: 300px; /* only for demonstration, should be removed */
+    height: 800px; /* only for demonstration, should be removed */
     background: #81BEF7;
     padding: 20px;
   }
@@ -39,14 +39,14 @@
     padding: 10px;
     width: 80%;
     background-color: white;
-    height: 300px; /* only for demonstration, should be removed */
+    height: 800px; /* only for demonstration, should be removed */
   }
 
   .button {
       background-color: #81BEF7;
       border: solid 1px #81BEF7;
       border-radius: 5px;
-      height: 40px;
+      height: 60px;
       margin: auto 15px;
       padding: 0 10px 0px 10px;
   }
@@ -85,11 +85,47 @@
   }
 
   .country p {
+    background-color: #3399ff;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+  }
+
+  .country-table p {
       background-color: #3399ff;
       color: white;
       padding-top: 5px;
       padding-bottom: 5px;
+      padding-left: 5px;
   }
+
+  .country-table span {
+    position: absolute;
+    padding-left: 35px;
+    top: 55px;
+    left: 120px;
+  }
+
+  .country-table strong {
+    position: absolute;
+    top: 55px;
+    left: 15px;
+  }
+
+  .country-table input {
+    width: 70%;
+    float: right;
+    border: steelblue solid 1.5px; 
+    height: 40px;
+    margin-bottom: 20px;
+  }
+
+  .country-table {
+    margin-bottom: 20px;
+    position: relative;
+  } 
+
 
   .country-button .button {
     margin: 15px 5px;
@@ -98,14 +134,38 @@
   #fname, #cars{
     height: 40px;
     border: steelblue solid 1.5px;
-    width: 70%;
+    width: 65%;
     float: right;
   }
 
+  .form-code , .form-name , .form-select {
+    position: relative;
+  }
+
   label {
-      text-align: center;
-      justify-content: center;
-      justify-items: center;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+  }
+
+  .form-button {
+    justify-self: center;
+  }
+
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
   }
 
   @media only screen and (max-width: 600px) {
@@ -121,7 +181,7 @@
       }
       .content-article {
           width: 100%;
-          height: 500px;
+          height: 1200px;
       }
       .grid-container{
           display: grid;
@@ -129,7 +189,49 @@
           grid-template-rows: auto;
           padding: 10px;
       }
-      *{
-          align-items: center;
+      .country-button {
+        text-align: center;
       }
+      .button {
+        border-radius: 5px;
+        height: 50px;
+        margin: 10px;
+        padding: 20px 20px;
+      }
+}
+@media only screen and (max-width: 800px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+  .country-table strong {
+    display: inline-block;
+    width: 100%;
+  }
+  .country-table span {
+    display: block;
+  }
+  .country-table input {
+    display: block;
+  }
+  .content-article {
+    width: 100%;
+    height: 1000px;
+}
+}
+@media only screen and (min-width: 600px) and (max-width: 920px){
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+  #fname, #cars{
+    height: 40px;
+    border: steelblue solid 1.5px;
+    width: 55%;
+    float: right;
+  }
+  .content-article {
+    width: 100%;
+    height: 1000px;
+}
 }

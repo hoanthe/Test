@@ -4,6 +4,9 @@
 <head>
     <title>Page Title</title>
     <link rel="stylesheet" href="style.css">
+    <!--[if IE10]>
+	<link rel="stylesheet" type="text/css" href="all-ie-only.css" />
+<![endif]-->
 </head>
 
 <body>
@@ -32,15 +35,15 @@
             <div class="country">
                 <p>Filter</p>
                 <div class="grid-container">
-                    <form>
+                    <form class="form-code">
                         <label for="fname">Country Code:</label>
-                        <input type="text" id="fname" name="fname" value="John">
+                        <input type="text" id="fname" name="fname">
                     </form>
-                    <form>
+                    <form class="form-name">
                         <label for="fname">Country Name:</label>
-                        <input type="text" id="fname" name="fname" value="John">
+                        <input type="text" id="fname" name="fname">
                     </form>
-                    <form>
+                    <form class="form-select">
                         <label for="cars">Status:</label>
                         <select id="cars" name="cars">
                             <option value="volvo">--All--</option>
@@ -50,7 +53,7 @@
                             <option value="audi">Audi</option>
                         </select>
                     </form>
-                    <form>
+                    <form class="form-button">
                         <input class="button" type="button" value='Search'></input>
                         <input class="button" type="button" value='Clear'></input>
                     </form>
@@ -60,6 +63,62 @@
                     <input class="button" type="button" value='Excel Import'></input>
                     <input class="button" type="button" value='Excel Export'></input>
                 </div>
+            </div>
+
+            <div>
+                <div class="country-table">
+                    <p>Country list</p>
+                    <strong>Totals: <param>10 items</param></strong> 
+                    <span>Keyword</span>
+                    <input type="text" placeholder="Country Code, Country Name"></input>
+                </div>
+                <div>
+                    <table>
+                        <tr>
+                          <th>No.</th>
+                          <th>Country Code</th>
+                          <th>Country Name</th>
+                          <th>Status</th>
+                          <th>Action</th>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>ad</td>
+                          <td>Andorra</td>
+                          <td>Use</td>
+                          <td>...</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>ae</td>
+                          <td>United Arab Emirates</td>
+                          <td>Use</td>
+                          <td>...</td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>af</td>
+                          <td>Afghanistan</td>
+                          <td>Use</td>
+                          <td>...</td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          <td>ag</td>
+                          <td>Antigua and Barbuda</td>
+                          <td>Use</td>
+                          <td>...</td>
+                        </tr>
+                        <tr>
+                          <td>...</td>
+                          <td>...</td>
+                          <td>...</td>
+                          <td>...</td>
+                          <td>...</td>
+                        </tr>
+                      </table>
+                </div>
+
             </div>
 
         </div>
