@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body class="container-fluid">
+    <div class="row">
+        <header class="col-12">Countries of the World</header>
+    </div>
+    <div class="row">
+        <nav class="Nav-menu col-md-3 col-sm-12 d-flex flex-column">
+            <ul>
+                <ul>
+                    <li><strong>Personal</strong></li>
+                    <li><a href="./login.html">- Logined: Administrator</a></li>
+                    <li><a href="#">- Logout</a></li>
+                </ul>
+                <ul>
+                    <li><strong>System</strong></li>
+                    <li><a href="./index.html">- Dashboard</a></li>
+                    <li><a href="./countries.html">- Countries</a></li>
+                    <li><a href="./provinces.html">- Provinces</a></li>
+                    <li><a href="#">- Districts</a></li>
+                    <li><a href="#"> - Wards</a></li>
+                </ul>
+            </ul>
+        </nav>
+
+        <div class="content-article col-md-9 col-sm-12 h-100">
+            <h5>Provicne management</h5>
+            <div class="country">
+                <p>Filter</p>
+                <div class="row">
+                    <div class="input-group mb-3 col-md-6 col-sm-12">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" for="inputGroupSelect01">Country:</span>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01">
+                            <option selected>--All--</option>
+                            <option value="1">Volvo</option>
+                            <option value="2">Saab</option>
+                            <option value="3">Fiat</option>
+                            <option value="4">Audi</option>
+                        </select>
+                    </div>
+                    <div class="input-group mb-3 col-md-6 col-sm-12">
+                        <span class="input-group-text" id="basic-addon1">Provicne Code:</span>
+                        <input type="text" class="form-control" placeholder="000000" aria-label="Username"
+                            aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3 col-md-6 col-sm-12">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Provicne Name:</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="USA" aria-label="Username"
+                            aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3 col-md-6 col-sm-12">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" for="inputGroupSelect01">Status</span>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01">
+                            <option selected>--All--</option>
+                            <option value="1">Volvo</option>
+                            <option value="2">Saab</option>
+                            <option value="3">Fiat</option>
+                            <option value="4">Audi</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group mb-3 col-md-6 col-sm-12">
+                        
+                    </div>
+
+                    <form class="form-button col-md-6 col-sm-12 justify-content-center d-flex">
+                        <input class="btn btn-primary mx-3" type="button" value='Search'></input>
+                        <input class="btn btn-primary mx-3" type="button" value='Clear'></input>
+                    </form>
+                </div>
+
+                <div class="country-button justify-content-sm-center justify-content-md-start d-flex">
+                    <input class="btn btn-primary mx-3" type="button" value='Add New'></input>
+                    <input class="btn btn-primary mx-3" type="button" value='Excel Import'></input>
+                    <input class="btn btn-primary mx-3" type="button" value='Excel Export'></input>
+                </div>
+            </div>
+
+            <div>
+                <div class="mb-3">
+                    <p>Provicne list</p>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-12">
+                            <strong>Totals:</strong>
+                            <span>10 items</span>
+                        </div>
+                        <div class="row col-md-10 col-sm-12">
+                            <span class="col-2">Keyword</span>
+                            <input class="col-10" type="text" placeholder="Country Code, Country Name"></input>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <table>
+                        <tr>
+                            <th>No.</th>
+                            <th>Provicne Code</th>
+                            <th>Provicne Name</th>
+                            <th>Country Name</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>HN</td>
+                            <td>Hà Nội</td>
+                            <td>Việt Nam</td>
+                            <td>Use</td>
+                            <td>...</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>CB</td>
+                            <td>Cao Bằng</td>
+                            <td>Việt Nam</td>
+                            <td>Use</td>
+                            <td>...</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>LS</td>
+                            <td>Lạng Sơn</td>
+                            <td>Việt Nam</td>
+                            <td>Use</td>
+                            <td>...</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>BG</td>
+                            <td>Bắc Giang</td>
+                            <td>Việt Nam</td>
+                            <td>Use</td>
+                            <td>...</td>
+                        </tr>
+                        <tr>
+                            <td>...</td>
+                            <td>...</td>
+                            <td>...</td>
+                            <td>...</td>
+                            <td>...</td>
+                            <td>...</td>
+                        </tr>
+                    </table>
+
+                    <div class="row mt-3">
+                        <div class="col-md-2 col-sm-12">
+                            <div class="d-flex float-left">
+                                <span>Show </span>
+                                <select class="custom-select h-25" id="inputGroupSelect01">
+                                    <option selected>1</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                                <span> item</span>
+                            </div>
+                        </div>
+                        <div class="col-md-10 col-sm-12">
+                            <nav class="float-right" aria-label="Page navigation example">
+                                <ul class="pagination">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <footer class="col-12">
+            <span>'@Copyright 2020</span>
+        </footer>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

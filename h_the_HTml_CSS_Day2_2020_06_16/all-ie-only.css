@@ -1,0 +1,30 @@
+.grid-container {
+    display: -ms-grid;
+    -ms-grid-columns: 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr;
+    padding: 10px;
+    align-items: center;
+}
+.form-code , .form-name , .form-select {
+    position: relative;
+  }
+
+.form-code {
+    -ms-grid-column: 1;
+    -ms-grid-row: 1;
+}
+
+.form-name {
+    -ms-grid-column: 2;
+    -ms-grid-row: 1;
+}
+
+.form-select{
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+}
+
+.form-button{
+    -ms-grid-column: 2;
+    -ms-grid-row: 2;
+}
