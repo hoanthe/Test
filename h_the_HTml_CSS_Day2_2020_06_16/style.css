@@ -19,7 +19,7 @@
   .Nav-menu {
     float: left;
     width: 20%;
-    height: 800px; /* only for demonstration, should be removed */
+    height: auto; /* only for demonstration, should be removed */
     background: #9bc2e6;
     padding: 20px;
   }
@@ -39,6 +39,9 @@
     color: #002060;
   }
   
+  .content-button {
+    height: 80px;
+  }
   .content-article {
     float: left;
     padding: 10px;
@@ -184,7 +187,7 @@
       }
       .content-article {
           width: 100%;
-          height: 1200px;
+          height: auto;
       }
       .grid-container{
           display: grid;
