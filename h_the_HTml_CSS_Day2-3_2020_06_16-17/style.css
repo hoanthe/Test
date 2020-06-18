@@ -1,0 +1,143 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /* Style the header */
+  header {
+    background-color: #00b0f0;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+  }
+  
+  /* Create two columns/boxes that floats next to each other */
+  .Nav-menu {
+    float: left;
+    width: 20%;
+    height: auto; /* only for demonstration, should be removed */
+    background: #9bc2e6;
+    padding: 20px;
+  }
+  
+  /* Style the list inside the menu */
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  nav ul li a{
+    text-decoration: none;
+    padding: 0;
+    color: #0070c0;
+  }
+
+  nav ul li a:active {
+    color: #002060;
+  }
+  
+.container-body {
+  min-height: calc(100vh - 156px);
+  min-height: -o-calc(100vh - 156px); 
+  min-height: -webkit-calc(100vh - 156px); 
+  min-height: -moz-calc(100vh - 156px); 
+  }
+
+
+  .button {
+      background-color: #81BEF7;
+      border: solid 1px #81BEF7;
+      border-radius: 5px;
+      height: 60px;
+      margin: auto 15px;
+      padding: 0 10px 0px 10px;
+  }
+  
+  /* Clear floats after the columns */
+  .content-body:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Style the footer */
+  footer {
+    background-color: #00b0f0;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    clear: both;
+  }
+  
+  /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+
+.height-select{
+    height: 35px;
+    margin-top: -5px;
+}
+ p {
+    background-color: #5b9bd5;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+  }
+
+  .country-button .btn {
+    margin: 15px 5px;
+  }
+
+  #fname, #cars{
+    height: 40px;
+    border: steelblue solid 1.5px;
+    width: 65%;
+    float: right;
+  }
+
+  ins {
+    color: #0070c0;
+  }
+
+  .form-button {
+    margin-bottom: 16px;
+  }
+
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  @media only screen and (max-width: 600px) {
+      nav, article {
+        width: 100%;
+        height: auto;
+      }
+      .Nav-menu {
+        background: #9bc2e6;
+      }
+
+      .country-button {
+        text-align: center;
+      }
+      .button {
+        border-radius: 5px;
+        height: 50px;
+        margin: 10px;
+        padding: 20px 20px;
+      }
+
+}
